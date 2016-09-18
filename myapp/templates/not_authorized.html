@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load staticfiles %}
+    {% include "common/header.html" %}
+    </head>
+    <body>
+       {% autoescape off %}
+        <div id="wrapper">
+            <!-- Sidebar -->
+            {% include "common/menu.html" %}
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+            {% include "common/top_navigation.html" %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                        {% include "common/error_success.html" %}
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        {% include "common/footer.html" %}
+        {% endautoescape %}
+    </body>
+</html>

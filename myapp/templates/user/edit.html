@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>{% load staticfiles %}
+        {% include "common/header.html" %}</head>
+    <body>
+        
+        <div id="wrapper">
+
+            {% include "common/menu.html" %}
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+            {% include "common/top_navigation.html" %}
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- <div class="page-header">
+                                <h1>Edit User</h1>
+                            </div> -->
+
+                            <div class="well" style="word-wrap:break-word">
+                               
+                                {% include "common/error_success.html" %}
+                                
+                                <div class="row">
+                                 <div class="col-xs-4">
+                                <form role="form"  data-toggle="validator" action="{% url 'myapp:user-edit'%}" method="post"  >
+                                    {% csrf_token %}
+                                    <input type="hidden" name="username" value="{{ user_edit.username }}">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input value="{{ user_edit.email }}" required="" type="email" name="email" class="form-control" placeholder="example@domain.com" aria-describedby="sizing-addon2" data-error="Bruh, that email address is invalid">
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input data-maxlength="20" data-minlength="8" required="" type="password" name="password" class="form-control" id="password" placeholder="Password" aria-describedby="sizing-addon2"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}" maxlength="20" >
+                                        <div class="help-block">Password must be minimum 8 characters in length with atleast 1 uppercase, 1 lowercase, 1 number and 1 special character</div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="verify_password">Confirm Password</label>
+                                        <input required="" type="password" name="verify_password"  id="verify_password" data-match="#password" data-match-error="Whoops, these don't match"  class="form-control" placeholder="Confirm Password" aria-describedby="sizing-addon2"  >
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                    <label for="role">Role</label>
+                                    <select class="form-control" id="role" name="role" >
+                                        <option {% if user_edit.role == 'Admin' %}selected="selected"{% endif %}>Admin</option>
+                                        <option {% if user_edit.role == 'User' %}selected="selected"{% endif %}>User</option>
+                                    </select>
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <input class="btn btn-default" type="submit" value="Save" >
+                                    </div>
+                                    <br>
+                                </form>
+                                </div>
+                                 <!-- <div class="col-xs-10">
+                                    <div class="default-well">Script Log
+                                        <div class="well">{{ script_output_log }}</div>
+                                    </div>
+                                </div> -->
+                                </div>
+                              
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        {% include "common/footer.html" %}
+    </body>
+</html>

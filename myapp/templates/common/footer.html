@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- /#wrapper --><!-- jQuery -->
+<html>
+    <head></head>
+    <body>
+        {% load staticfiles %}
+        <script src="{% static 'myapp/js/jquery.js' %}"></script>
+        <!-- <script src="/static/polls/js/jquery.js"></script> -->
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{% static 'myapp/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'myapp/js/validator.js' %}"></script>
+        <!-- <script src="{% static 'myapp/js/bootstrap-confirmation.js' %}"></script> -->
+        <script src="{% static 'myapp/js/jquery.popconfirm.js' %}"></script>
+        <script src="{% static 'myapp/js/main.js' %}"></script>
+        <!-- <script src="/static/polls/js/bootstrap.min.js"></script> -->
+        <!-- Menu Toggle Script -->
+        <script>
+            $("#menu-toggle").click(function(e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+        </script>
+    </body>
+</html>

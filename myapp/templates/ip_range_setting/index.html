@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>{% extends 'common/base.html' %}</head>
+    <body>
+        {% block content %}
+                <div class="container-fluid">
+                    
+                    <div class="row">
+                        {% include "common/error_success.html" %}
+                        
+                            
+                        
+                        <div class="col-xs-6">
+                            
+                            <div class="row" >
+                                <!-- Table -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                      
+                                            <th>Start IP</th>
+                                            <th>End IP</th>
+                                            <th>Last Changed</th>
+                                            <th></th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            
+                                            <td>{{ ip_range_model.start_ip_address }}</td>
+                                            <td>{{ ip_range_model.end_ip_address }}</td>
+                                            
+                                            <td>{{ ip_range_model.pub_date |date:"D d M Y H:i e" }}</td>
+                                            <td>{% if ip_range_model %}<a class="btn btn-default" href="{% url 'myapp:ip-range-delete' %}?id={{ ip_range_model.id}}">Delete</a>
+                                            {% endif %}
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                         </div>
+                    </div>
+                         <div class="row">
+                             <div class="col-xs-4">   
+                                
+                                <form data-toggle="validator" action="{% url 'myapp:ip-range-setting'%}" method="post"  enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    
+                                    <div class="input-group">
+                                        <label for="start_ip" >Start IP</label> 
+                                        <input required="" type="text" name="start_ip" class="form-control" placeholder="For example,192.168.8.0"  >
+                                    </div>
+                                    
+                                    <br>
+                                    <div class="input-group">
+                                        <label for="end_ip" >End IP</label> 
+                                        <input required="" type="text" name="end_ip" class="form-control" placeholder="For example,192.168.8.12"  >
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <input class="btn btn-default" type="submit" value="Save">
+                                    </div>
+                                </form>
+                                <!-- <div class="well">{{ script_output_log }}</div> -->
+                            </div>
+                        </div>
+                    
+                </div>
+        {% endblock %}
+    </body>
+</html>

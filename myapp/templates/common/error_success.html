@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="error_alert" >
+        {% if errors %}
+        <ul>
+            {% for error in errors %}
+            <li>
+                <div class="alert alert-danger" role="alert">
+                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    {{ error }}
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
+        
+        <div id="success_alert">
+        {% if success_msg %}
+        <div class="alert alert-success" role="alert">{{ success_msg }}</div>
+        <br>
+        {% endif %}
+        </div>
+        
+        <div id="progress" class="hide">
+            <div id="success_msg" class="alert alert-success" role="alert">In progress</div>
+        </div>
+    </body>
+</html>

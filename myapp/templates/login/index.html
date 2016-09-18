@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>{% load staticfiles %}
+        {% include "common/header.html" %}</head>
+    <body style="background-color: rgb(255, 51, 75)">
+        
+        {% include "common/error_success.html" %}
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <!-- Page Content -->
+            
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+
+                    <div class=" shadow" id="loginBox">
+                        
+                        <form data-toggle="validator" action="{% url 'myapp:login'%}" method="post">
+                            <div id="loginHead">
+                                <div id="logoDiv" style="margin:0px !important"></div>
+                                <div>Restricted Access</div>
+                            </div>
+                            <div>
+                            {% csrf_token %}
+                            <label for="username">User Name</label> 
+                            <div class="input-group">
+                                <input autocomplete="off" required="" type="text" name="username" class="form-control" placeholder="User Name" aria-describedby="sizing-addon2">
+                            </div>
+                            <br>
+                            <label for="password">Password</label> 
+                            <div class="input-group">
+                                <input autocomplete="off" required="" type="password" name="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon2">
+                            </div>
+                            <br>
+                            <div class="input-group">
+                                <input type="submit" value="Login" class="btn btn-default">
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        {% include "common/footer.html" %}
+    </body>
+</html>

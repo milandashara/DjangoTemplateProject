@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+    {% load staticfiles %}
+    {% include "common/header.html" %} </head>
+    <body>
+        
+       
+        <div id="wrapper">
+            <!-- Sidebar -->
+            {% include "common/menu.html" %}
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+            {% include "common/top_navigation.html" %}
+            {% block content %}{% endblock %}    
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        {% include "common/footer.html" %}
+    </body>
+</html>
