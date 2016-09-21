@@ -157,8 +157,7 @@ STATIC_URL = '/myapp/static/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-    STATIC_ROOT,
+    os.path.join(PROJECT_ROOT, 'myapp/static'),
 )
 
 LOCKOUT_MAX_ATTEMPTS=5
