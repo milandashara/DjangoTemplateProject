@@ -147,7 +147,7 @@ LOGGING = {
         
     },
 }
-
+STATIC_URL = '/static/'
 LOCKOUT_MAX_ATTEMPTS=5
 LOCKOUT_TIME=600
 
