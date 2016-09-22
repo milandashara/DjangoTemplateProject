@@ -1,1 +1,1 @@
-web: gunicorn djangotemplateproject.wsgi:djangotemplateproject --log-file -
+web: gunicorn DjangoTemplateProject.wsgi:djangotemplateproject --log-file -
