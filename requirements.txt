@@ -3,4 +3,4 @@ ipaddr==2.1.11
 django-axes==2.2.0
 whitenoise==3.2.1
 django-lockout==0.1.1
-gunicorn=19.6.0
+gunicorn==19.6.0
