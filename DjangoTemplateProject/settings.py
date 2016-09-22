@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE_CLASSES = [
     'lockout.middleware.LockoutMiddleware',
     'django.middleware.security.SecurityMiddleware',
+     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -162,12 +163,15 @@ LOGGING = {
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-
+DEBUG = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+STATIC_HOST = 'https://djangotemplateproject.herokuapp.com/' if not DEBUG else ''
+STATIC_URL = STATIC_HOST + '/static/'
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -184,7 +188,7 @@ AXES_LOGIN_FAILURE_LIMIT=5
 AXES_LOCK_OUT_AT_FAILURE=True
 AXES_LOCKOUT_URL='/myapp/locked'
 AXES_COOLOFF_TIME=0.02
-DEBUG = True
+
 
 #Production Setting
 
