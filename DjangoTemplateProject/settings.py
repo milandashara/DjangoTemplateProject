@@ -160,6 +160,12 @@ LOGGING = {
 # )
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
 LOCKOUT_MAX_ATTEMPTS=5
 LOCKOUT_TIME=600
 
