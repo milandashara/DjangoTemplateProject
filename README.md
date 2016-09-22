@@ -1,5 +1,10 @@
+Deployed on heroku
+https://djangotemplateproject.herokuapp.com/myapp/user
 
-It is django  web application which can be used as template project. It includes below functioanlity 
+
+Database: sqlite
+
+It is django  web application which can be used as template project. It includes below functioanlity
 
 1. Login
 2. Logout
