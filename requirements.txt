@@ -4,3 +4,6 @@ django-axes==2.2.0
 whitenoise==3.2.1
 django-lockout==0.1.1
 gunicorn==19.6.0
+py-moneyed==0.6.0
+django-money==0.9.1
+django_countries==4.0

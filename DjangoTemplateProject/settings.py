@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp.apps.myappConfig',
     'axes',
+    'django_countries',
 ]
 
 MIDDLEWARE_CLASSES = [
